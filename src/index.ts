@@ -1,30 +1,28 @@
+// imports
+import { generateLabelList } from "./generateLabelList";
+
 interface point {
+  label: string;
   x: number;
   y: number;
-  label: string;
 }
-// generate list of possible labels
-let allLabels = Array.from(Array(26)).map((_, num) =>
-  String.fromCharCode(num + 97)
-);
 
-// update pointList with point objects (label, x, y)
+// generate list of possible labels
+const allLabels = generateLabelList();
 
 let pointList = [];
 
-let labelList = []; // when called it should return a label that can be added to a point
+// let labelList = []; // when called it should return a label that can be added to a point
 
-function setLabel(x: number, y: number): { label: string } {
+function setLabel(
+  x: number,
+  y: number
+): { label: string; coordinates: [x: number, y: number] } {
   pointList.push(allLabels.slice(0, 1).toString());
   const outputLabel = allLabels.slice(0, 1).toString();
 
-  return { label: outputLabel };
+  return { label: outputLabel, coordinates: [x, y] };
 }
-
-/*
-TYPES OF INPUTS
-1. a set of coordinates to create a new point
-*/
 
 // return a point that has x,y coords and a label value
 function setPoint(x: number, y: number, label: string): point {
@@ -34,4 +32,4 @@ function setPoint(x: number, y: number, label: string): point {
   return { x: x, y: y, label: label };
 }
 
-export { setPoint };
+export { setPoint, setLabel };
