@@ -7,7 +7,7 @@ let allLabels = Array.from(Array(26)).map((_, num) =>
 
 let pointList = [];
 
-// when called it should return a label that can be added to a point
+let labelList = []; // when called it should return a label that can be added to a point
 
 function setLabel(x: number, y: number): { label: string } {
   pointList.push(allLabels.slice(0, 1).toString());
