@@ -1,7 +1,7 @@
 {
   "name": "euclid-ts",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "./src/index.ts",
   "scripts": {
     "build": "tsc ./src/index.ts --outDir ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
