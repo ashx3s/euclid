@@ -1,7 +1,10 @@
-interface point {
-  label: string;
+interface Coordinate {
   x: number;
   y: number;
+}
+interface Point {
+  label: string;
+  coordinate: Coordinate;
 }
 type viewBox = {
   x: number;
